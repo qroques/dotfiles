@@ -1,0 +1,17 @@
+[user]
+	name = Quentin Roques
+	email = quentin.roques@knplabs.com
+[core]
+	excludesfile = ~/.gitignore
+    	editor= nano
+	excludesfiles = /home/quentin/.gitignore
+[pull]
+	default = current
+[push]
+	default = current
+[tag]
+	sort = version:refname
+[branch]
+	sort = -committerdate
+[mergetool]
+	keepBackup = false
