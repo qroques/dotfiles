@@ -17,7 +17,7 @@ sudo apt -y install git
 Clone the repository:
 
 ```
-git clone https://github.com/qroques/.dotfiles ~/.dotfiles
+git clone https://github.com/qroques/dotfiles ~/dotfiles
 ```
 
 Magic install:
