@@ -1,0 +1,40 @@
+#!/bin/bash
+
+sudo apt-get install python3-pip
+sudo pip install --upgrade pip
+
+sudo apt-get install zsh
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+
+chsh -s $(which zsh)
+ln -s -f $PWD/system/zshrc/.zshrc $HOME/.zshrc
+wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf ~/.fonts/
+wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf ~/.fonts/
+wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf ~/.fonts/
+wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf ~/.fonts/
+
+# Other system commands
+sudo apt-get install kitty
+sudo apt-get install jq
+sudo apt-get install curl
+sudo apt-get install tmux
+sudo apt-get install htop
+sudo apt-get install ctop
+
+sudo snap install yq
+
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+
+sh ~/.fzf/install
+
+# Install kitty conf
+mkdir -p ~/.config/kitty
+ln -s -f $PWD/system/kitty/kitty.conf $HOME/.config/kitty/kitty.conf
+
+# Remove some gnome shortcut
+if [ $ORIGINAL_XDG_CURRENT_DESKTOP = 'ubuntu:GNOME' ]; then
+    gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-down "[]"
+    gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-up "[]"
+    gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-down "[]"
+    gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-up "[]"
+fi

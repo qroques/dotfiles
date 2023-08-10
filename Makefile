@@ -4,4 +4,5 @@ install:
 	sh ./docker/install
 	sh ./node/install
 	sh ./php/install
-	sh ./miscellaneous/install
+	sh ./system/install
+	sh ./browsers/install

@@ -9,6 +9,8 @@
 	default = current
 [push]
 	default = current
+	autoSetupRemote = true
+
 [tag]
 	sort = version:refname
 [branch]
