@@ -3,11 +3,16 @@
 sudo apt-get install python3-pip
 sudo pip install --upgrade pip
 
-sudo apt-get install zsh
+sudo apt install zsh
+
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
 chsh -s $(which zsh)
-ln -s -f $PWD/system/zshrc/.zshrc $HOME/.zshrc
+curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
+
+ln -s -f ~/dotfiles/system/.zshrc ~/.zshrc
+
+mkdir ~/.fonts
 wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf ~/.fonts/
 wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf ~/.fonts/
 wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf ~/.fonts/

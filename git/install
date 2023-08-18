@@ -2,5 +2,5 @@
 
 sudo apt -y install git
 
-ln -s -f $HOME/.dotfiles/git/ignore $HOME/.gitignore
-ln -s -f $HOME/.dotfiles/git/config $HOME/.gitconfig
+ln -s -f ~/dotfiles/git/ignore ~/.gitignore
+ln -s -f ~/dotfiles/git/config ~/.gitconfig
