@@ -4,7 +4,8 @@
 [core]
 	excludesfile = ~/.gitignore
     	editor= nano
-	excludesfiles = /home/quentin/.gitignore
+	excludesfiles = ~/.gitignore
+	pager = less
 [pull]
 	default = current
 [push]

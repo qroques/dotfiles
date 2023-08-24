@@ -18,9 +18,10 @@ export TERM="xterm-256color"
 
 ## PLUGINS
 zplug 'zsh-users/zsh-syntax-highlighting'
-# zplug 'zsh-users/zsh-completions'
-# zplug 'zsh-users/zsh-autosuggestions'
+zplug 'zsh-users/zsh-completions'
+zplug 'zsh-users/zsh-autosuggestions'
 zplug 'zplug/zplug', hook-build:'zplug --self-manage'
+zstyle ':completion:*' menu select
 
 # THEME
 ZSH_THEME="powerlevel10k/powerlevel10k"
