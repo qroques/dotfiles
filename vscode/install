@@ -3,3 +3,5 @@
 mkdir -p ~/.config/Code\ -\ OSS/User
 
 sudo snap install --classic code
+
+ln -s -f ~/dotfiles/vscode/.editorconfig ~/.editorconfig
