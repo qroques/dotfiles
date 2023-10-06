@@ -56,6 +56,7 @@ Or alternatively, fork the repository to make you own.
 cd ~/dotfiles
 ```
 
+> **Note**
 > If you are not [@qroques](github.com/qroques), you may want to change the git configuration to your own. To do so, modify the file `./git/config` with something like:
 
 ```config
