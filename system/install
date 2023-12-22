@@ -19,13 +19,13 @@ wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20I
 wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf ~/.fonts/
 
 # Other system commands
-sudo apt-get install kitty
-sudo apt-get install jq
-sudo apt-get install curl
-sudo apt-get install tmux
-sudo apt-get install htop
-sudo apt-get install ctop
-
+sudo apt -y install kitty
+sudo apt -y install jq
+sudo apt -y install curl
+sudo apt -y install tmux
+sudo apt -y install htop
+sudo apt -y install ctop
+sudo apt -y install flameshot
 sudo snap install yq
 
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
@@ -42,4 +42,10 @@ if [ $ORIGINAL_XDG_CURRENT_DESKTOP = 'ubuntu:GNOME' ]; then
     gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-up "[]"
     gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-down "[]"
     gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-up "[]"
+    #Sceenshot
+    gsettings set org.gnome.shell.keybindings show-screenshot-ui '[]'
+    gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']"
+    gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ name 'flameshot'
+    gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ command '/usr/bin/flameshot gui'
+    gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ binding 'Print'
 fi
