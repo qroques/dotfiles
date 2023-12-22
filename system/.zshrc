@@ -60,6 +60,8 @@ fi
 zplug load
 
 fpath=(~/.zsh/completion $fpath)
+WORDCHARS='~!#$%^&*(){}[]<>?.+;-'
+MOTION_WORDCHARS='~!#$%^&*(){}[]<>?.+;-/'
 
 export PATH=$PATH:$HOME/.local/bin/
 
@@ -111,8 +113,8 @@ zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
 # zle -N history-beginning-search-backward-end history-search-end
 # zle -N history-beginning-search-forward-end history-search-end
-bindkey $'\E[1;5D' vi-backward-blank-word
-bindkey $'\E[1;5C' vi-forward-blank-word
+bindkey $'\E[1;5D' backward-word
+bindkey $'\E[1;5C' forward-word
 bindkey '^[OA' up-line-or-beginning-search
 bindkey '^[OB' down-line-or-beginning-search
 
@@ -153,8 +155,6 @@ alias stack='cd ~/projects/i24news-stack'
 alias friends='cd ~/projects/i24news-friends'
 
 
-alias detec-docker-cadav='docker service ls | awk "{print \$4,\$2}" | grep -P "(\d)\/(?!\1)"'
-
 SSH_ENV="$HOME/.ssh/agent-environment"
 
 function start_agent {
@@ -164,6 +164,25 @@ function start_agent {
     chmod 600 "${SSH_ENV}"
     . "${SSH_ENV}" > /dev/null
     /usr/bin/ssh-add;
+}
+
+if [ -f "${HOME}/.gpg-agent-info" ]; then
+  . "${HOME}/.gpg-agent-info"
+  export GPG_AGENT_INFO
+fi
+
+GPG_TTY=$(tty)
+export GPG_TTY
+
+# I24NEWS stack
+function master {
+    if ($(git config --get remote.origin.url) != "git@github.com:KnpLabs/i24news.tv.git"); then
+        echo "Not on i24NEWS api repo";
+        return;
+    fi
+
+    return;
+    docker exec -it $(docker ps -q --filter name=api_php) bin/console doctrine:mi:mi -n $(echo current-$(git diff --name-only master | grep "migrations/Version" | wc -l))
 }
 
 
@@ -179,3 +198,5 @@ else
 fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+zplug load

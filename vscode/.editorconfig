@@ -13,6 +13,9 @@ indent_size = 2
 [ansible/**/*.yml]
 indent_size = 2
 
+[swarm.*.yaml]
+indent_size = 2
+
 [.circleci/*.yml]
 indent_size = 2
 

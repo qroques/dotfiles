@@ -1,10 +1,10 @@
 # dotfiles
 
-This repo is about dotfiles to reinstall m'y PC efficiently.
+This repo is about dotfiles to reinstall my PC efficiently.
 
 This is made for Ubuntu Linux distribution but it can be also used on other Unix based systems. It's not garanteed to work the same.
 
-This readme assumed you are familiar with basic linux command line usage. 
+This readme assumed you are familiar with basic linux command line usage.
 
 ## Pre-requisites
 
