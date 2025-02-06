@@ -152,8 +152,9 @@ alias api='cd ~/projects/i24news.tv'
 alias front='cd ~/projects/i24-reader'
 alias back='cd ~/projects/i24NEWS-admin'
 alias stack='cd ~/projects/i24news-stack'
-alias friends='cd ~/projects/i24news-friends'
-
+alias docs='cd ~/projects/i24news-documentation'
+alias dot='code ~/dotfiles'
+alias dl='cd ~/Downloads'
 
 SSH_ENV="$HOME/.ssh/agent-environment"
 
