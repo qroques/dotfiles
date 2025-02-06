@@ -1,6 +1,8 @@
 [user]
 	name = Quentin Roques
 	email = quentin.roques@knplabs.com
+	signinkey = DCA956648B999D5317E179F6AD576B2A87CDC410
+	signingkey = AD576B2A87CDC410
 [core]
 	excludesfile = ~/.gitignore
     	editor= nano
@@ -14,9 +16,12 @@
 
 [tag]
 	sort = version:refname
+	gpgSign = true
 [branch]
 	sort = -committerdate
 [mergetool]
 	keepBackup = false
 [commit]
 	gpgsign = true
+[init]
+	defaultBranch = main
