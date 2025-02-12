@@ -4,7 +4,13 @@ This repo is about dotfiles to reinstall my PC efficiently.
 
 This is made for Ubuntu Linux distribution but it can be also used on other Unix based systems. It's not garanteed to work the same.
 
-This readme assumed you are familiar with basic linux command line usage.
+This readme assume you are familiar with basic linux command line usage.
+
+## Easy install
+
+```shell
+wget -O - https://raw.githubusercontent.com/qroques/dotfiles/master/prerequisites/install.sh | bash
+```
 
 ## Pre-requisites
 
