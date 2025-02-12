@@ -2,45 +2,26 @@
 
 This repo is about dotfiles to reinstall my PC efficiently.
 
-This is made for Ubuntu Linux distribution but it can be also used on other Unix based systems. It's not garanteed to work the same.
+This is made for **Ubuntu Linux** distribution. It's not garanteed to work the same.
 
-This readme assumed you are familiar with basic linux command line usage.
+This readme assume you are familiar with basic linux command line usage.
 
-## Pre-requisites
-
-Make sure you have the following installed before following the installation steps:
-
-<details>
-<summary>Git</summary>
-
-Install git:
+## Auto install
 
 ```shell
-sudo apt -y install git
+wget -O - https://raw.githubusercontent.com/qroques/dotfiles/master/prerequisites/install.sh | bash
 ```
 
-</details>
+This script will :
 
-<details>
-<summary>Make</summary>
+- Install `git` ;
+- Install `make` ;
+- Clone the repository into your home directory (as `dotfiles`) ;
+- Run the install process ;
 
-Depending on the Linux distribution this may require to install `make`
+## Manual Install
 
-To know if `make` is installed:
-
-```shell
-make --version
-```
-
-If not, install it:
-
-```shell
-sudo apt install make
-```
-
-</details>
-
-## Install
+If you already have `git` and `make` installed, you can clone the repository and run the install process manually.
 
 On your fresh Ubuntu Linux installation:
 
@@ -65,7 +46,7 @@ cd ~/dotfiles
 	email = your.name@knplabs.com
 ```
 
-Magic install:
+then, run the install process:
 
 ```shell
 make install
