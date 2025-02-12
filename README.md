@@ -6,6 +6,12 @@ This is made for **Ubuntu Linux** distribution. It's not garanteed to work the s
 
 This readme assume you are familiar with basic linux command line usage.
 
+## Easy install
+
+```shell
+wget -O - https://raw.githubusercontent.com/qroques/dotfiles/master/prerequisites/install.sh | bash
+```
+
 ## Auto install
 
 ```shell

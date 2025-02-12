@@ -8,7 +8,6 @@ install: ## Install all
 	sh ./docker/install
 	sh ./node/install
 	sh ./php/install
-	sh ./system/install
 	sh ./browsers/install
 	sh ./utilities/install
 

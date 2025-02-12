@@ -25,7 +25,6 @@ sudo apt -y install jq
 sudo apt -y install curl
 sudo apt -y install tmux
 sudo apt -y install htop
-sudo apt -y install ctop
 sudo apt -y install flameshot
 sudo snap install yq
 
@@ -37,7 +36,7 @@ sh ~/.fzf/install
 mkdir -p ~/.config/kitty
 ln -s -f $PWD/system/kitty/kitty.conf $HOME/.config/kitty/kitty.conf
 
-# Remove some gnome shortcut
+# Remove some gnome shortcuts
 if [ $ORIGINAL_XDG_CURRENT_DESKTOP = 'ubuntu:GNOME' ]; then
     gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-down "[]"
     gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-up "[]"
