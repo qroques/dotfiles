@@ -1,10 +1,7 @@
 #!/bin/bash
-
-sudo apt-get install python3-pip
-sudo pip install --upgrade pip
-
 sudo apt -y install zsh
 
+[ ! -d ${ZSH_CUSTOM:-$HOME}/.oh-my-zsh/custom/themes/powerlevel10k ] || rm -r ${ZSH_CUSTOM:-$HOME}/.oh-my-zsh/custom/themes/powerlevel10k
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
 chsh -s $(which zsh)
@@ -28,13 +25,10 @@ sudo apt -y install htop
 sudo apt -y install flameshot
 sudo snap install yq
 
+[ ! -d ~/.fzf ] || rm -r ~/.fzf
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 
 sh ~/.fzf/install
-
-# Install kitty conf
-mkdir -p ~/.config/kitty
-ln -s -f $PWD/system/kitty/kitty.conf $HOME/.config/kitty/kitty.conf
 
 # Remove some gnome shortcuts
 if [ $ORIGINAL_XDG_CURRENT_DESKTOP = 'ubuntu:GNOME' ]; then

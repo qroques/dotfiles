@@ -9,6 +9,7 @@ install: ## Install all
 	sh ./node/install
 	sh ./php/install
 	sh ./browsers/install
+	sh ./vscode/install
 	sh ./utilities/install
 
 .PHONY: help
