@@ -153,6 +153,8 @@ alias front='cd ~/projects/i24-reader'
 alias back='cd ~/projects/i24NEWS-admin'
 alias stack='cd ~/projects/i24news-stack'
 alias friends='cd ~/projects/i24news-friends'
+alias dot='cd ~/dotfiles'
+alias cdot='code ~/dotfiles'
 
 
 SSH_ENV="$HOME/.ssh/agent-environment"
