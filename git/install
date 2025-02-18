@@ -1,6 +1,17 @@
 #!/bin/bash
 
-sudo apt -y install git
-
 ln -s -f ~/dotfiles/git/ignore ~/.gitignore
 ln -s -f ~/dotfiles/git/config ~/.gitconfig
+
+# Install Github CLI https://github.com/cli/cli
+(type -p wget >/dev/null || (sudo apt update && sudo apt-get install wget -y)) \
+    && sudo mkdir -p -m 755 /etc/apt/keyrings \
+    && wget -qO- https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo tee /etc/apt/keyrings/githubcli-archive-keyring.gpg > /dev/null \
+    && sudo chmod go+r /etc/apt/keyrings/githubcli-archive-keyring.gpg \
+    && echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
+    && sudo apt update \
+    && sudo apt install gh -y
+
+# Install Gihub CLI extension gh-dash https://github.com/dlvhdr/gh-dash
+gh extension install dlvhdr/gh-dash
+ln -s -f ~/dotfiles/git/gh-dash/config.yml ~/.config/gh-dash/config.yml
